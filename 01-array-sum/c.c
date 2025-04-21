@@ -2,7 +2,8 @@
 
 int array_sum(int n, int* arr) {
     int sum = 0;
-    for(int i=0; i < n; i++) {
+    int i;
+    for(i=0; i < n; i++) {
         sum += arr[i];
     }
     return sum;
