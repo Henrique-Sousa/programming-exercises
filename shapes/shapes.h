@@ -36,9 +36,9 @@ class Rectangle : public Quadrilateral {
 
 class Square : public Rectangle { 
   public:
-    constexpr Square(double s1)
-      : Rectangle(s1, s1) {}
+    constexpr Square(double side)
+      : Rectangle(side, side) {}
 
     const double area() const override { return side1 * side1; }
-    const double perimeter() const override { return 4*side1; }
+    const double perimeter() const override { return 4 * side1; }
 };
