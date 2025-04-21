@@ -6,9 +6,6 @@ def array_sum(arr):
         sum += el
     return sum
 
-def funct_array_sum(arr):
-    return 
-    
 
 arr = [1, 2, 3, 4, 10, 11]
 
