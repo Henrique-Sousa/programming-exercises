@@ -27,15 +27,14 @@ class Quadrilateral : public Shape {
 
 class Rectangle : public Quadrilateral {
   public:
-    constexpr Rectangle(double s1, double s2)
-      : Quadrilateral(s1, s2, s1, s2) {}
+    constexpr Rectangle(double length, double width)
+      : Quadrilateral(length, width, length, width) {}
     virtual const double area() const override { return side1 * side2; }
     const double perimeter() const override { return 2 * (side1 + side2); }
     // virtual const double diagonal () const = 0;
 };
 
 class Square : public Rectangle { 
-
   public:
     constexpr Square(double s1)
       : Rectangle(s1, s1) {}
