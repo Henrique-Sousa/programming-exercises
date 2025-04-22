@@ -1,3 +1,6 @@
+#include <math.h>
+#define _USE_MATH_DEFINES
+
 class Shape {
     virtual const double area() const = 0;
     virtual const double perimeter() const = 0;
@@ -31,14 +34,25 @@ class Rectangle : public Quadrilateral {
       : Quadrilateral(length, width, length, width) {}
     virtual const double area() const override { return side1 * side2; }
     const double perimeter() const override { return 2 * (side1 + side2); }
-    // virtual const double diagonal () const = 0;
 };
 
 class Square : public Rectangle { 
   public:
-    constexpr Square(double side)
-      : Rectangle(side, side) {}
+    constexpr Square(double side) : Rectangle(side, side) {}
 
     const double area() const override { return side1 * side1; }
     const double perimeter() const override { return 4 * side1; }
+};
+
+class Circle: public Shape {
+  protected:
+    double radius;
+
+  public:
+    Circle(double r) : radius(r) {}
+
+    const double getRadius() const { return radius; }
+    
+    const double area() const override { return M_PI * radius * radius; }
+    const double perimeter() const override { return 2 * M_PI * radius; }
 };
