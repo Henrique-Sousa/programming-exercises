@@ -21,11 +21,6 @@ class Quadrilateral : public Shape {
     constexpr double getSide3() const { return side3; }
     constexpr double getSide4() const { return side4; }
 
-    void setSide1(double s) { side1 = s; }
-    void setSide2(double s) { side2 = s; }
-    void setSide3(double s) { side3 = s; }
-    void setSide4(double s) { side4 = s; }
-
     virtual const double area() const = 0;
     const double perimeter() const override { return side1 + side2 + side3 + side4; }
 };
