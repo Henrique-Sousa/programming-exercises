@@ -1,5 +1,7 @@
-#include <math.h>
-#define _USE_MATH_DEFINES
+#include <numbers>
+
+using namespace std::numbers;
+
 
 class Shape {
     virtual const double area() const = 0;
@@ -53,6 +55,6 @@ class Circle: public Shape {
 
     const double getRadius() const { return radius; }
     
-    const double area() const override { return M_PI * radius * radius; }
-    const double perimeter() const override { return 2 * M_PI * radius; }
+    const double area() const override { return pi * radius * radius; }
+    const double perimeter() const override { return 2 * pi * radius; }
 };
