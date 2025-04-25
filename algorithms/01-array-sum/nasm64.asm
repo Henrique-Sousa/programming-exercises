@@ -1,32 +1,34 @@
 extern printf
 
-section .data
-    n:      dd 6
-    arr:    dd 1, 2, 3, 4, 10, 11
-    f:      db "%d", 10, 0
+exit:   equ     0x3c
 
+section .data
+    n:      dd 6    ; array length
+    arr:    dd 1, 2, 3, 4, 10, 11
+    format: db "%d", 10, 0
 section .text
 global _start
 
 _start:
 
-    ; int array_sum_result = array_sum(n, arr);
-    mov     esi, [n]
+    ; System V AMD64 ABI calling convention is RDI, RSI...
+
+    ; int array_sum_result = array_sum(arr, n);
     mov     rdi, arr
+    mov     esi, [n]
     call    array_sum
 
-    ; System V AMD64 ABI calling convention is RDI, RSI...
-    ; printf(f="%d\n", array_sum_result);
+    ; printf(format="%d\n", array_sum_result=rax);
     push    rsi
-    mov     rdi, f
+    mov     rdi, format
     mov     rsi, rax
-    xor     rax, rax
+    xor     rax, rax            ; required by V AMD64 ABI for variadic functions
     call    printf
     pop     rsi
 
-    ; exit
+    ; exit with 0 as exit status
     xor     rdi, rdi
-    mov     rax, 0x3c
+    mov     rax, exit 
     syscall
 
 array_sum:
@@ -47,4 +49,4 @@ begin_loop:
 end_loop:
     mov     rsp, rbp
     pop     rbp
-    ret 
+    ret                         ; return sum
