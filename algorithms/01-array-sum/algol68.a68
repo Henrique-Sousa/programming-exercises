@@ -2,7 +2,7 @@ PROC sum_array = (REF []INT a, INT n) INT:
 (
     INT sum := 0;
     FOR i FROM 1 TO n DO
-        sum := sum + arr[i]
+        sum := sum + a[i]
     OD;
     sum
 );
