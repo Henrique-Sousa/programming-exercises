@@ -6,6 +6,7 @@ section .data
     n:      dd 6    ; array length
     arr:    dd 1, 2, 3, 4, 10, 11
     format: db "%d", 10, 0
+
 section .text
 global _start
 
