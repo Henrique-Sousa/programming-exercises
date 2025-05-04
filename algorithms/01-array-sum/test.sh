@@ -3,7 +3,7 @@
 gcc --std=c89 --pedantic c.c && ./a.out && rm -f ./a.out
 g++ cpp.cpp && ./a.out && rm -f ./a.out
 
-python3 python.py
+mypy python.py && python3 python.py
 node javascript.js
 php php.php
 
