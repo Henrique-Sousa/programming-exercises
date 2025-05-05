@@ -4,8 +4,11 @@ gcc --std=c89 --pedantic c.c && ./a.out && rm -f ./a.out
 g++ cpp.cpp && ./a.out && rm -f ./a.out
 
 mypy python.py && python3 python.py
-node javascript.js
 php php.php
+
+cd typescript
+tsc typescript.ts && node typescript.js && rm -rf typescript.js 
+cd ..
 
 nasm -f elf64 -o nasm64.o nasm64.asm
 ld -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o nasm64.out -lc nasm64.o

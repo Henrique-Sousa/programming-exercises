@@ -3,8 +3,9 @@
 const assert = require("node:assert/strict");
 
 
-const array_sum = (arr) => {
-    let sum = 0;
+let array_sum: (arr: number[]) => number;
+array_sum =  (arr) => {
+    let sum: number = 0;
     for (let el of arr) {
         sum += el;
     }

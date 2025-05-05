@@ -4,3 +4,5 @@
 *.class
 .Random.seed
 *.prg
+node_modules
+*.js
