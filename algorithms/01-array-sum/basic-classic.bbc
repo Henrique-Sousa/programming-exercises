@@ -1,0 +1,15 @@
+10  LET N = 6
+20  LET S = 0
+30  DIM ARR(6)
+40  ARR(0) = 1
+50  ARR(1) = 2
+60  ARR(2) = 3
+70  ARR(3) = 4
+80  ARR(4) = 10 
+90  ARR(5) = 11 
+100 FOR I=0 TO N-1
+110 S = S + ARR(I)
+120 NEXT I
+130 PRINT S
+140 END
+RUN

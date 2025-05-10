@@ -25,3 +25,4 @@ rm -rf c64.prg temp.prg
 gfortran -std=legacy fortran77.f && ./a.out && rm -f ./a.out
 a68g algol68.a68
 a60 algol60.a60
+fbc basic-modern.bas && ./basic-modern && rm -rf basic-modern 
